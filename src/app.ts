@@ -4,7 +4,7 @@ import logger from './config/logger'
 const app = exress()
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.send('Hello....')
 })
 
 app.get('/ping', (req, res) => {
