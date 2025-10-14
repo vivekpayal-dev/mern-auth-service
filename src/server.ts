@@ -1,5 +1,9 @@
-function geetUser(name: string) {
-    return name
+function geetUser() {
+    const user = {
+        username: 'Vivek',
+    }
+    const fname = user.username
+    console.log(fname)
 }
 
-geetUser('Vivek')
+geetUser()
