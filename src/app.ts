@@ -3,6 +3,10 @@ import { HttpError } from 'http-errors'
 import logger from './config/logger'
 const app = exress()
 
+app.get('/', (req, res) => {
+    res.send('Hello')
+})
+
 app.get('/ping', (req, res) => {
     res.json({
         message: 'Mern Auth Service',
