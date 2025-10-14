@@ -1,5 +1,5 @@
 function geetUser(name: string) {
-  console.log(`Hello ${name}`);
+    return name
 }
 
-geetUser("Vivek");
+geetUser('Vivek')
