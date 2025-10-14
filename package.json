@@ -1,24 +1,26 @@
 {
-    "name": "mern-auth-service",
-    "version": "1.0.0",
-    "description": "Mern Auth Service",
-    "main": "index.js",
-    "scripts": {
-        "dev": "node src/server.js",
-        "format:check": "prettier . --check",
-        "format:fix": "prettier . --write",
-        "lint:check": "eslint .",
-        "lint:fix": "eslint . --fix",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Vivek",
-    "license": "ISC",
-    "devDependencies": {
-        "@eslint/js": "^9.37.0",
-        "@types/node": "^24.7.2",
-        "eslint": "^9.37.0",
-        "prettier": "3.6.2",
-        "typescript": "^5.9.3",
-        "typescript-eslint": "^8.46.1"
-    }
+  "name": "mern-auth-service",
+  "version": "1.0.0",
+  "description": "Mern Auth Service",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "format:check": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "author": "Vivek",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@types/node": "^24.7.2",
+    "eslint": "^9.37.0",
+    "husky": "^9.1.7",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1"
+  }
 }
