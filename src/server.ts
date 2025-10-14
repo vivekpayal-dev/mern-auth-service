@@ -1,5 +1,3 @@
-function geetUser(name: string) {
-    return name
-}
+import { Config } from './config'
 
-geetUser('Vivek')
+console.log(Config.PORT)
