@@ -12,3 +12,12 @@ touch mkdir src
 ```
 npm init
 ```
+```
+npm i -D typescript 
+```
+```
+npx tsc --init
+```
+```
+npx tsc
+```
