@@ -1,17 +1,17 @@
+import 'reflect-metadata'
+
 import exress, { Request, Response, NextFunction } from 'express'
 import { HttpError } from 'http-errors'
 import logger from './config/logger'
+import authRouter from './routes/auth'
+
 const app = exress()
 
 app.get('/', (req, res) => {
     res.send('Hello....')
 })
 
-app.get('/ping', (req, res) => {
-    res.json({
-        message: 'Mern Auth Service',
-    })
-})
+app.use('/auth', authRouter)
 
 // Global Err Handler
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
