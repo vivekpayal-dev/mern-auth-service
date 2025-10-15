@@ -6,6 +6,7 @@ import logger from './config/logger'
 import authRouter from './routes/auth'
 
 const app = exress()
+app.use(exress.json())
 
 app.get('/', (req, res) => {
     res.send('Hello....')
