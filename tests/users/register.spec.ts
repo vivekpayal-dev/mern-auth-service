@@ -150,5 +150,46 @@ describe('POST /auth/register', () => {
         })
     })
 
-    // describe('Fields are missing', () => {})
+    describe('Fields are missing', () => {
+        it('should return 400 status code ', async () => {
+            //Arrange
+            const userData = {
+                firstname: 'Vivek',
+                lastname: 'Payal',
+                email: '',
+                password: 'secrect',
+            }
+
+            // Act
+            const response = await request(app)
+                .post('/auth/register')
+                .send(userData)
+            const userRepository = connection.getRepository(User)
+            const users = await userRepository.find()
+
+            // Assert
+            expect(response.statusCode).toBe(400)
+            expect(users).toHaveLength(0)
+        })
+    })
+
+    describe('Fields are not in proper format', () => {
+        it('should trim the email field', async () => {
+            //Arrange
+            const userData = {
+                firstname: 'Vivek',
+                lastname: 'Payal',
+                email: 'vivek@gmail.com        ',
+                password: 'secrect',
+            }
+
+            // Act
+            await request(app).post('/auth/register').send(userData)
+            // Assert
+            const userRepository = connection.getRepository(User)
+            const users = await userRepository.find()
+            const user = users[0]
+            expect(user.email).toBe('vivek@gmail.com')
+        })
+    })
 })
